@@ -43,9 +43,13 @@
 
 ### Linux环境下部署的建议及坑
 1. 若采用方式二进行部署，可通过以下命令把所有依赖包输出到文件:
-```pip3 freeze -r modules.txt```
-然后在Linux服务器采用以下命令来安装所有相关的依赖包
-```pip3 install -r modules.txt```
+    ```
+    pip3 freeze -r modules.txt
+    ```
+    然后在Linux服务器采用以下命令来安装所有相关的依赖包
+    ```
+    pip3 install -r modules.txt
+    ```
 2. 建议将执行脚本加入服务器的定时任务crontab中定时执行，可以从此不再管它
 3. 阿里云的服务器有个大坑：禁用发邮件的25端口，这时需要我们改一下mailServer.py文件：
 ```python
