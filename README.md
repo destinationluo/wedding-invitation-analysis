@@ -17,7 +17,7 @@
 2. config.ini中配置要发送通知的邮箱信息
 3. 运行launch.py即可执行
 
-## Windows环境打包
+## Windows环境部署
 
 方式一、 使用pyinstaller进行打包
 1. 安装pyinstaller`pip3 install pyinstaller`
@@ -28,7 +28,7 @@
 方式二、直接执行python脚本（需要python环境及依赖包环境）
 1. 直接执行launch.py
 
-## Linux环境
+## Linux环境部署
 
 方式一、 使用pyinstaller进行打包
 1. 安装pyinstaller`pip3 install pyinstaller`
@@ -41,8 +41,9 @@
 2. 执行`sh start.sh`
 
 ### Linux环境下部署的建议及坑
-1. 建议将执行脚本加入服务器的定时任务crontab中定时执行，可以从此不再管它
-2. 阿里云的服务器有个大坑：禁用发邮件的25端口，这时需要我们改一下mailServer.py文件：
+1. 若采用方式二进行部署，可通过`pip3 freeze -r modules.txt`把所有依赖包输出到文件，然后在Linux服务器采用`pip3 install -r modules.txt`来安装所有相关的依赖包
+2. 建议将执行脚本加入服务器的定时任务crontab中定时执行，可以从此不再管它
+3. 阿里云的服务器有个大坑：禁用发邮件的25端口，这时需要我们改一下mailServer.py文件：
 ```python
 # 修改25端口为465端口
 # NETEASY_163 = ['smtp.163.com', 25]
