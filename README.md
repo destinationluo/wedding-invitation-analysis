@@ -3,6 +3,7 @@
 婚礼请柬的统计脚本，每次执行可将请柬数据库中的人数以及祝福统计出发，发送给执行的邮箱，已达到统计和通知的目的
 
 婚礼请柬的前端仓库地址：https://github.com/destinationluo/wedding-invitation-client.git
+
 婚礼请柬的后端仓库地址：https://github.com/destinationluo/wedding-invitation-server.git
 
 ## 技术栈
@@ -41,7 +42,10 @@
 2. 执行`sh start.sh`
 
 ### Linux环境下部署的建议及坑
-1. 若采用方式二进行部署，可通过`pip3 freeze -r modules.txt`把所有依赖包输出到文件，然后在Linux服务器采用`pip3 install -r modules.txt`来安装所有相关的依赖包
+1. 若采用方式二进行部署，可通过以下命令把所有依赖包输出到文件:
+`pip3 freeze -r modules.txt`
+然后在Linux服务器采用以下命令来安装所有相关的依赖包
+`pip3 install -r modules.txt`
 2. 建议将执行脚本加入服务器的定时任务crontab中定时执行，可以从此不再管它
 3. 阿里云的服务器有个大坑：禁用发邮件的25端口，这时需要我们改一下mailServer.py文件：
 ```python
