@@ -13,8 +13,6 @@ class MySQLUtil(object):
         self.db_online = pymysql.connect(self.ip, self.user, self.password, self.database, self.port)
         self.cursor = self.db_online.cursor()
 
-    # db_online = pymysql.connect("10.188.36.15", "all_open_r", "DBVs9XckpCGkerNF", "tc_settlement", 5408)
-
     def executeQuery(self, sql, callback):
         try:
             self.cursor.execute(sql)
